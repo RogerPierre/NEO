@@ -1,14 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neo-Bank</title>
+    <title>Banco Minimal</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0a4d68;
+        }
+
+        .saudacao {
+            background: #0a4d68;
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .saudacao h2 {
+            margin-top: 10px;
+            font-size: 1.8rem;
+        }
+
+        .acoes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .botao {
+            background: #ffffff;
+            border: 2px solid #0a4d68;
+            color: #0a4d68;
+            padding: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            background: #0a4d68;
+            color: white;
+        }
+
+        button:focus {
+            outline: 3px solid #08708f;
+            outline-offset: 3px;
+        }
+    </style>
+
 </head>
 
 <body>
+
+    <div class="container">
+
+        <h1>Banco Minimal</h1>
+
+        <div class="saudacao">
+            <p>Bem-vindo de volta</p>
+            <h2>Olá, Cliente 👋</h2>
+        </div>
+
+        <div class="acoes">
+
+            <button id="balance" class="botao">
+                Saldo
+            </button>
+
+            <button id="transfer" class="botao">
+                Transferência
+            </button>
+
+            <button id="withdraw" class="botao">
+                Saque
+            </button>
+
+            <button id="deposit" class="botao">
+                Depósito
+            </button>
+
+        </div>
+
+    </div>
+    <script type="module" src="./src/GUI/index.ts"></script>
     <script src="src/GUI/index.ts"></script>
-</body>
 
 </html>

@@ -2,10 +2,9 @@
   "name": "protocolo-gbtp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "index.html",
   "scripts": {
-    "testC": "ts-node",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel"
   },
   "repository": {
     "type": "git",
@@ -20,7 +19,9 @@
   "homepage": "https://github.com/RogerPierre/Protocolo-GBTP#readme",
   "dependencies": {
     "@types/node": "^25.6.0",
+    "parcel": "^2.16.4",
     "ts-node": "^10.9.2",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "websockets": "^0.2.0"
   }
 }
