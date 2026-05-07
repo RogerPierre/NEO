@@ -11,7 +11,7 @@ export interface ResponseNBTP {
     MENSAGE: string
     VALUE: number
 }
-export default class ProtocoloNBTP {
+export class ProtocoloNBTP {
     ///em codigos de entrada de string. retire toda indentação e quebra de linhas
     public resToString(Res: ResponseNBTP): string {
         return `STATUS:${Res.STATUS}\n` +
