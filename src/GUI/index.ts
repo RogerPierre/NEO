@@ -123,28 +123,32 @@ export class Index {
         const titulo = isSucesso ? 'Sucesso' : 'Erro na Operação';
 
         resultado.innerHTML = `
-            <div style="width: 100%; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: 20px; padding: 24px; animation: fadeIn 0.3s ease-out;">
-                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
-                    <div style="background: ${accentColor}20; color: ${accentColor}; width: 48px; height: 48px; border-radius: 12px; display: flex; justify-content: center; align-items: center;">
+            <div style="width: 100%; background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 24px; animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+                <div style="display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px;">
+                    <div style="background: ${accentColor}15; color: ${accentColor}; width: 48px; height: 48px; border-radius: 12px; display: flex; justify-content: center; align-items: center; flex-shrink: 0; border: 1px solid ${accentColor}30;">
                         <i data-lucide="${iconName}"></i>
                     </div>
-                    <div>
-                        <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--text);">${titulo}</h3>
-                        <p style="font-size: 0.875rem; color: var(--text-muted);">${resposta.message}</p>
+                    <div style="flex: 1;">
+                        <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--text); margin-bottom: 4px;">${titulo}</h3>
+                        <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.5;">${resposta.message}</p>
                     </div>
                 </div>
                 
-                <div style="background: var(--bg); border-radius: 12px; padding: 16px; border: 1px solid var(--border);">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">Saldo Atualizado</span>
-                        <span style="font-size: 1.25rem; font-weight: 700; color: var(--text);">R$ ${resposta.balance.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
+                <div style="background: linear-gradient(to right, var(--bg), rgba(255,255,255,0.02)); border-radius: 16px; padding: 20px; border: 1px solid var(--border); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; right: 0; width: 60px; height: 60px; background: ${accentColor}; filter: blur(40px); opacity: 0.1;"></div>
+                    <div style="display: flex; flex-direction: column; gap: 8px; position: relative; z-index: 1;">
+                        <span style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em;">Saldo Atualizado</span>
+                        <div style="display: flex; align-items: baseline; gap: 4px;">
+                            <span style="font-size: 0.875rem; font-weight: 600; color: var(--text-muted);">R$</span>
+                            <span style="font-size: 1.75rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em;">${resposta.balance.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
+                        </div>
                     </div>
                 </div>
             </div>
             <style>
                 @keyframes fadeIn {
-                    from { opacity: 0; transform: translateY(10px); }
-                    to { opacity: 1; transform: translateY(0); }
+                    from { opacity: 0; transform: translateY(12px) scale(0.98); }
+                    to { opacity: 1; transform: translateY(0) scale(1); }
                 }
             </style>
         `;
